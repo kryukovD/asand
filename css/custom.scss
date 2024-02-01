@@ -1,0 +1,45 @@
+$grid-gutter-width:0px;
+$headings-margin-bottom:0px;
+$paragraph-margin-bottom:0px;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1000px,
+  xl: 1200px,
+  xxl: 1400px
+);
+$container-max-widths: (
+  xs:100%,
+  sm: 100%,
+  md: 100%,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1500px
+);
+$accordion-button-icon:url("../images/filter.svg");
+$accordion-button-active-icon:url("../images/filter.svg");
+$accordion-icon-width:"8px";
+$accordion-icon-height:"5px";
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+.carousel-indicators [data-bs-target]{
+    background-color: red;
+}
+.site__accordion .accordion-button:not(.collapsed) {
+    color: unset;
+    background-color:unset;   
+    box-shadow: none;
+}
+.site__accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("../images/green-pants.svg");
+}
+.accordion-button:focus {
+    box-shadow: none;
+}
+.site__accordion .accordion-button {
+    padding: 0px;
+}
+.site__accordion .accordion-body {
+    padding: 0px;
+}

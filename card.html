@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/slick.css">
+    </link>
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <script src="./js/jquery-3.6.4.min.js"> </script>
+    <script src="./js/bootstrap.bundle.min.js"> </script>
+    <script src="./js/slick.min.js"></script>
+    <script defer src="./js/main.js"></script>
+</head>
+
+<body>
+
+
+    <!-- Модальное окно Заказать звонок -->
+    <div class="modal fade" id="callModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <svg class="modal-btn-close" width="12" height="12" data-bs-dismiss="modal" viewBox="0 0 12 12"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.7727 1.32466C11.8448 1.25269 11.902 1.16724 11.941 1.07318C11.98 0.979113 12.0001 0.878283 12.0002 0.776444C12.0003 0.674605 11.9803 0.573751 11.9413 0.47964C11.9024 0.38553 11.8454 0.300005 11.7734 0.22795C11.7014 0.155894 11.616 0.0987197 11.5219 0.0596898C11.4279 0.0206599 11.327 0.00053926 11.2252 0.000476667C11.1233 0.000414074 11.0225 0.0204108 10.9284 0.059325C10.8343 0.0982392 10.7487 0.155309 10.6767 0.227275L6 4.90396L1.32466 0.227275C1.17914 0.0817534 0.981767 -1.53333e-09 0.775968 0C0.570168 1.53332e-09 0.372798 0.0817534 0.227276 0.227275C0.0817534 0.372798 1.53333e-09 0.570168 0 0.775967C-1.53332e-09 0.981767 0.0817534 1.17914 0.227276 1.32466L4.90396 6L0.227276 10.6753C0.15522 10.7474 0.0980629 10.8329 0.0590669 10.9271C0.0200709 11.0212 0 11.1221 0 11.224C0 11.3259 0.0200709 11.4268 0.0590669 11.521C0.0980629 11.6151 0.15522 11.7007 0.227276 11.7727C0.372798 11.9182 0.570168 12 0.775968 12C0.877869 12 0.978773 11.9799 1.07292 11.9409C1.16706 11.9019 1.2526 11.8448 1.32466 11.7727L6 7.09603L10.6767 11.7727C10.8222 11.9181 11.0195 11.9996 11.2252 11.9995C11.4309 11.9994 11.6281 11.9176 11.7734 11.772C11.9187 11.6265 12.0003 11.4292 12.0002 11.2236C12.0001 11.0179 11.9182 10.8207 11.7727 10.6753L7.09604 6L11.7727 1.32466Z"
+                            fill="#292929" fill-opacity="0.5" />
+                    </svg>
+
+                    <h2 class="modal-title" id="exampleModalLabel">Заказать звонок</h2>
+
+                </div>
+                <div class="modal-body">
+                    <form class="modal-section__form justify-content-between row ">
+                        <div class="col-12">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="name" placeholder="Ваше имя">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="phone" placeholder="+ 7 (900) 000 00-00">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="modal-section__form__wrap-textarea d-flex">
+                                <textarea class="flex-grow-1" type="text" name="message">Сообщение </textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-12  modal-header__col-personal col-personal">
+                            <div class="col-personal__wrap d-flex ">
+                                <input class="personal-agree" type="checkbox">
+                                <p class="personal-agree-text"> Я согласен на обработку персональных данных</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="modal-section__form__wrap-input section-form__wrap-inputBtn">
+                                <button class="btn-general input-submit-btn flex-grow-1"
+                                    value="Отправить">Отправить</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Модальное окно Заявка на покупку -->
+    <div class="modal fade" id="callModalOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xxl">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <svg class="modal-btn-close" width="12" height="12" data-bs-dismiss="modal" viewBox="0 0 12 12"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.7727 1.32466C11.8448 1.25269 11.902 1.16724 11.941 1.07318C11.98 0.979113 12.0001 0.878283 12.0002 0.776444C12.0003 0.674605 11.9803 0.573751 11.9413 0.47964C11.9024 0.38553 11.8454 0.300005 11.7734 0.22795C11.7014 0.155894 11.616 0.0987197 11.5219 0.0596898C11.4279 0.0206599 11.327 0.00053926 11.2252 0.000476667C11.1233 0.000414074 11.0225 0.0204108 10.9284 0.059325C10.8343 0.0982392 10.7487 0.155309 10.6767 0.227275L6 4.90396L1.32466 0.227275C1.17914 0.0817534 0.981767 -1.53333e-09 0.775968 0C0.570168 1.53332e-09 0.372798 0.0817534 0.227276 0.227275C0.0817534 0.372798 1.53333e-09 0.570168 0 0.775967C-1.53332e-09 0.981767 0.0817534 1.17914 0.227276 1.32466L4.90396 6L0.227276 10.6753C0.15522 10.7474 0.0980629 10.8329 0.0590669 10.9271C0.0200709 11.0212 0 11.1221 0 11.224C0 11.3259 0.0200709 11.4268 0.0590669 11.521C0.0980629 11.6151 0.15522 11.7007 0.227276 11.7727C0.372798 11.9182 0.570168 12 0.775968 12C0.877869 12 0.978773 11.9799 1.07292 11.9409C1.16706 11.9019 1.2526 11.8448 1.32466 11.7727L6 7.09603L10.6767 11.7727C10.8222 11.9181 11.0195 11.9996 11.2252 11.9995C11.4309 11.9994 11.6281 11.9176 11.7734 11.772C11.9187 11.6265 12.0003 11.4292 12.0002 11.2236C12.0001 11.0179 11.9182 10.8207 11.7727 10.6753L7.09604 6L11.7727 1.32466Z"
+                            fill="#292929" fill-opacity="0.5" />
+                    </svg>
+
+                    <h2 class="modal-title" id="exampleModalLabel">Заявка на покупку</h2>
+
+                </div>
+                <div class="modal-body">
+                    <form class="modal-section__form justify-content-between row ">
+                        <div class="col-sm-6 col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="company" placeholder="Название компании">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="inn" placeholder="Заявка на покупку">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="name" placeholder="Ваше имя*">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="city" placeholder="Ваш город*">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input">
+                                <input class="flex-grow-1" type="text" name="phone" placeholder="+ 7 (900) 000 00-00*">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12">
+                            <div class="modal-section__form__wrap-input  ">
+                                <input class="flex-grow-1" type="text" name="email" placeholder="E-mail*">
+                            </div>
+                        </div>
+
+                        <div class="col-12 modal-body__col-order modal-section__form__wrap-textarea">
+                            <div class="modal-section__form__wrap-textarea d-flex flex-grow-1">
+                                <textarea placeholder="Сообщение" class="flex-grow-1" type="text"
+                                    name="message"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-12  modal-header__col-personal col-personal modal-body__col-order">
+                            <div class="col-personal__wrap d-flex ">
+                                <input class="personal-agree" type="checkbox">
+                                <p class="personal-agree-text"> Нажимая на кнопку «Отправить заявку», вы соглашаетесь с
+                                    <a href="javascript:void(0)"> «Политикой конфиденциальности» </a>, а также даете
+                                    согласие на обработку
+                                    персональных данных
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 modal-body__col-order">
+                            <div class="modal-section__form__wrap-input section-form__wrap-inputBtn">
+                                <button class="btn-general input-submit-btn flex-grow-1" value="Отправить" >Оставить
+                                    заявку</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Главная  Обертка -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__header-top header-top container-fluid d-none d-sm-block">
+                <div class="container">
+                    <!---->
+                    <ul class="header-top__list d-flex ">
+                        <li class="header-top__item"><a href="javascript:void(0)">Автобетоносмесители </a> </li>
+                        <li class="header-top__item"><a href="javascript:void(0)">Самосвалы </a></li>
+                        <li class="header-top__item"><a href="javascript:void(0)">Тягачи </a></li>
+                        <li class="header-top__item"><a href="javascript:void(0)">Фронтальные погрузчики </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header__header-bottom header-bottom container-fluid">
+                <div class="container header__header-bottom-anchor around-border d-flex justify-content-between">
+                    <div class="header-bottom__logo logo d-flex">
+                        <a class="logo__link" href="javascript:void(0)">
+                            <img src="./images/logo-part1.png"> <img src="./images/logo-part2.png">
+                        </a>
+                    </div>
+                    <!--навигация-->
+                    <nav
+                        class="header-bottom__nav nav d-flex around-border flex-grow-1 justify-content-center  justify-content-sm-end justify-content-md-center justify-content-sm-center justify-content-lg-start">
+                        <ul
+                            class="nav__list d-none d-sm-none d-lg-none d-xxl-flex align-items-center flex-grow-1 justify-content-between">
+                            <li class="nav__item d-flex nav-item-link-catalog"><a href="javascript:void(0)"
+                                    class="nav__link link-catalog">
+                                    <svg class="icon-catalog ui-svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.5 3C2.32843 3 3 2.32843 3 1.5C3 0.671573 2.32843 0 1.5 0C0.671573 0 0 0.671573 0 1.5C0 2.32843 0.671573 3 1.5 3Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M10 3C10.8284 3 11.5 2.32843 11.5 1.5C11.5 0.671573 10.8284 0 10 0C9.17157 0 8.5 0.671573 8.5 1.5C8.5 2.32843 9.17157 3 10 3Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M18.5 3C19.3284 3 20 2.32843 20 1.5C20 0.671573 19.3284 0 18.5 0C17.6716 0 17 0.671573 17 1.5C17 2.32843 17.6716 3 18.5 3Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M1.5 11.5C2.32843 11.5 3 10.8284 3 10C3 9.17157 2.32843 8.5 1.5 8.5C0.671573 8.5 0 9.17157 0 10C0 10.8284 0.671573 11.5 1.5 11.5Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M10 11.5C10.8284 11.5 11.5 10.8284 11.5 10C11.5 9.17157 10.8284 8.5 10 8.5C9.17157 8.5 8.5 9.17157 8.5 10C8.5 10.8284 9.17157 11.5 10 11.5Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M18.5 11.5C19.3284 11.5 20 10.8284 20 10C20 9.17157 19.3284 8.5 18.5 8.5C17.6716 8.5 17 9.17157 17 10C17 10.8284 17.6716 11.5 18.5 11.5Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M1.5 20C2.32843 20 3 19.3284 3 18.5C3 17.6716 2.32843 17 1.5 17C0.671573 17 0 17.6716 0 18.5C0 19.3284 0.671573 20 1.5 20Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M10 20C10.8284 20 11.5 19.3284 11.5 18.5C11.5 17.6716 10.8284 17 10 17C9.17157 17 8.5 17.6716 8.5 18.5C8.5 19.3284 9.17157 20 10 20Z"
+                                            fill="#EB5F35" />
+                                        <path
+                                            d="M18.5 20C19.3284 20 20 19.3284 20 18.5C20 17.6716 19.3284 17 18.5 17C17.6716 17 17 17.6716 17 18.5C17 19.3284 17.6716 20 18.5 20Z"
+                                            fill="#EB5F35" />
+                                    </svg>
+                                    Каталог</a>
+                                <div class="dropdown-menu-header">
+                                    <div class="container dropdown-menu-header__inner-submenu d-flex">
+                                        <ul class="dropdown-menu-header__list">
+                                            <li
+                                                class="dropdown-menu-header__item d-flex justify-content-between align-items-center flex-grow-1">
+                                                <a class="dropdown-menu-header__link"
+                                                    href="javascript:void(0)">Автобетоносмесители </a>
+                                                <svg width="4" height="6" viewBox="0 0 4 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 3L0.25 5.16506L0.25 0.834936L4 3Z" fill="#292929"
+                                                        fill-opacity="0.5" />
+                                                </svg>
+                                                <div class="drop-menu-header__lvl1 drop-menu-header-lvl1">
+                                                    <ul
+                                                        class="drop-menu-header-lvl1__list row flex-grow-1 justify-content-start">
+                                                        <div class="col-xxl-3">
+                                                            <li class="drop-menu-header-lvl1__category"> <a
+                                                                    href="javascript:void(0)">Вид техники</a>
+                                                                <ul class="drop-menu-header-lvl1__list">
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 6x4 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 4x2</a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 6x6 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 8x4 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 6x4 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Карьерные
+                                                                            самосвалы </a></li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы
+                                                                            дизельные</a></li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы
+                                                                            полноприводные</a></li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 8
+                                                                            тонн</a></li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы от 8
+                                                                            тонн</a></li>
+                                                                </ul>
+
+                                                            </li>
+                                                        </div>
+                                                        <div class="col-xxl-3">
+                                                            <li class="drop-menu-header-lvl1__category"> <a
+                                                                    href="javascript:void(0)">Производители</a></li>
+                                                            <ul class="drop-menu-header-lvl1__list">
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">Самосвалы
+                                                                        FAW</a></li>
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">Самосвалы
+                                                                        SHACMAN</a></li>
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">Самосвалы
+                                                                        SINOTRUK</a></li>
+                                                            </ul>
+
+                                                        </div>
+                                                        <div class="col-xxl-3">
+                                                            <li class="drop-menu-header-lvl1__category"> <a
+                                                                    href="javascript:void(0)">Грузоподъемность, кг</a>
+                                                            </li>
+                                                            <ul class="drop-menu-header-lvl1__list">
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">32
+                                                                        000</a></li>
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">40
+                                                                        000</a></li>
+                                                                <li class="drop-menu-header-lvl1__category__item"><a
+                                                                        href="javascript:void(0)">30
+                                                                        000</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li
+                                                class="dropdown-menu-header__item d-flex justify-content-between align-items-center flex-grow-1">
+                                                <a class="dropdown-menu-header__link"
+                                                    href="javascript:void(0)">Самосвалы </a>
+                                                <svg width="4" height="6" viewBox="0 0 4 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 3L0.25 5.16506L0.25 0.834936L4 3Z" fill="#292929"
+                                                        fill-opacity="0.5" />
+                                                </svg>
+                                                <div class="drop-menu-header__lvl1 drop-menu-header-lvl1">
+                                                    <ul
+                                                        class="drop-menu-header-lvl1__list row flex-grow-1 justify-content-start">
+                                                        <div class="col-xxl-3">
+                                                            <li class="drop-menu-header-lvl1__category"> <a
+                                                                    href="javascript:void(0)">Вид техники</a>
+                                                                <ul class="drop-menu-header-lvl1__list">
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 6x4 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 4x2</a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 6x6 </a>
+                                                                    </li>
+                                                                    <li class="drop-menu-header-lvl1__category__item"><a
+                                                                            href="javascript:void(0)">Самосвалы 8x4 </a>
+                                                                    </li>
+                                                                </ul>
+
+                                                            </li>
+                                                        </div>
+                                                        <div class="col-xxl-3">
+                                                            <li class="drop-menu-header-lvl1__category"> <a
+                                                                    href="javascript:void(0)">Производители</a></li>
+                                                        </div>
+
+
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li
+                                                class="dropdown-menu-header__item d-flex justify-content-between align-items-center flex-grow-1">
+                                                <a class="dropdown-menu-header__link" href="javascript:void(0)">Тягачи
+                                                </a>
+                                                <svg width="4" height="6" viewBox="0 0 4 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 3L0.25 5.16506L0.25 0.834936L4 3Z" fill="#292929"
+                                                        fill-opacity="0.5" />
+                                                </svg>
+                                            </li>
+                                            <li
+                                                class="dropdown-menu-header__item d-flex justify-content-between align-items-center flex-grow-1">
+                                                <a class="dropdown-menu-header__link"
+                                                    href="javascript:void(0)">Фронтальные погрузчики </a>
+                                                <svg width="4" height="6" viewBox="0 0 4 6" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M4 3L0.25 5.16506L0.25 0.834936L4 3Z" fill="#292929"
+                                                        fill-opacity="0.5" />
+                                                </svg>
+                                            </li>
+
+                                        </ul>
+                                        <div class="dropdown-menu-header__content flex-grow-1"> </div>
+
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav__item"><a href="javascript:void(0)" class="nav__link">Лизинг</a></li>
+                            <li class="nav__item"><a href="javascript:void(0)" class="nav__link">Сервисный центр</a>
+                            </li>
+                            <li class="nav__item"><a href="javascript:void(0)" class="nav__link">О корпорации</a></li>
+                            <li class="nav__item"><a href="javascript:void(0)" class="nav__link">Контакты</a></li>
+                        </ul>
+                        <!--Мобильное меню -->
+                        <ul class="nav__menu-mobile  menu-mobile d-xxl-none link-catalog">
+                            <li class="menu-mobile__item-trigger d-flex align-items-center">
+                                <svg class="ui-catalog icon-mobile" width="27" height="19" viewBox="0 0 27 19"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="27" height="3" fill="#EB5F35" />
+                                    <rect y="8" width="17" height="3" fill="#EB5F35" />
+                                    <rect y="16" width="27" height="3" fill="#EB5F35" />
+                                </svg>
+                                <div class="mobile-list__close ">
+                                    <svg class="close-svg" width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M20.2071 0.292893C20.5976 0.683417 20.5976 1.31658 20.2071 1.70711L2.20711 19.7071C1.81658 20.0976 1.18342 20.0976 0.792893 19.7071C0.402369 19.3166 0.402369 18.6834 0.792893 18.2929L18.7929 0.292893C19.1834 -0.0976311 19.8166 -0.0976311 20.2071 0.292893Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M0.792893 0.292893C1.18342 -0.0976311 1.81658 -0.0976311 2.20711 0.292893L20.2071 18.2929C20.5976 18.6834 20.5976 19.3166 20.2071 19.7071C19.8166 20.0976 19.1834 20.0976 18.7929 19.7071L0.792893 1.70711C0.402369 1.31658 0.402369 0.683417 0.792893 0.292893Z"
+                                            fill="white" />
+                                    </svg>
+                                </div>
+                                <span class="d-none d-md-block">Меню </span>
+                                <ul class="menu-mobile__list mobile-list ">
+                                    <li class="menu-mobile__item  menu-mobile__trigger-catalog d-flex flex-column"><a
+                                            href="javascript:void(0)" class="menu-mobile__link"><img
+                                                class="icon-catalog" src="/images/icon-catalog.png"> Каталог</a>
+                                        <ul class="mobile-list__lvl1 mobile-list-lvl1">
+                                            <li class="mobile-list-lvl1__item d-inline-flex"><a
+                                                    href="javascript:void(0)"
+                                                    class="menu-mobile__link">Автобетоносмесители </a>
+                                                <!-- Второй уровень-->
+                                                <ul class="mobile-list__lvl2 mobile-list-lvl2">
+                                                    <!-- Шапка-->
+                                                    <li class="mobile-list-lvl2__header">
+                                                        <svg class="ui-svg mobile-list-lvl2__left " width="20"
+                                                            height="10" viewBox="0 0 20 10" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M4.75592 0.965336C5.08136 1.30007 5.08136 1.84278 4.75592 2.17752L2.01184 5L4.75592 7.82248C5.08136 8.15721 5.08136 8.69993 4.75592 9.03466C4.43049 9.3694 3.90285 9.3694 3.57741 9.03466L0.244078 5.60609C-0.0813592 5.27136 -0.0813592 4.72864 0.244078 4.39391L3.57741 0.965336C3.90285 0.630601 4.43049 0.630601 4.75592 0.965336Z"
+                                                                fill="#EB5F35" />
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M0 5C0 4.60551 0.319797 4.28571 0.714286 4.28571H19.2857C19.6802 4.28571 20 4.60551 20 5C20 5.39449 19.6802 5.71428 19.2857 5.71428H0.714286C0.319797 5.71428 0 5.39449 0 5Z"
+                                                                fill="#EB5F35" />
+                                                        </svg>
+                                                        <a href="javascript:void(0)">
+                                                            Самосвалы </a>
+                                                    </li>
+                                                    <!-- Категории-->
+                                                    <ul class="d-flex flex-column">
+                                                        <li class="mobile-list-lvl2__category d-inline-flex"> Вид
+                                                            техники </li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Карьерные самосвалы</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы дизельные</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы полноприводные</a>
+                                                        </li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы 8 тонн</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы от 8 тонн</a></li>
+                                                    </ul>
+
+                                                    <ul class="d-flex flex-column">
+                                                        <li class="mobile-list-lvl2__category d-inline-flex">
+                                                            Производители </li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы FAW</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы SHACMAN</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)"
+                                                                class="menu-mobile__link">Самосвалы SINOTRUK</a></li>
+                                                    </ul>
+
+                                                    <ul class="d-flex flex-column">
+                                                        <li class="mobile-list-lvl2__category d-inline-flex">
+                                                            Грузоподъемность, кг </li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)" class="menu-mobile__link">32
+                                                                000</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)" class="menu-mobile__link">40
+                                                                000</a></li>
+                                                        <li class="mobile-list-lvl2__item d-inline-flex"><a
+                                                                href="javascript:void(0)" class="menu-mobile__link">30
+                                                                000</a></li>
+                                                    </ul>
+
+                                                </ul>
+                                            </li>
+                                            <li class="mobile-list-lvl1__item d-inline-flex"><a
+                                                    href="javascript:void(0)" class="menu-mobile__link">Самосвалы</a>
+                                            </li>
+                                            <li class="mobile-list-lvl1__item d-inline-flex"><a
+                                                    href="javascript:void(0)" class="menu-mobile__link">Тягачи</a></li>
+                                            <li class="mobile-list-lvl1__item d-inline-flex"><a
+                                                    href="javascript:void(0)" class="menu-mobile__link">Фронтальные
+                                                    погрузчики</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-mobile__item"><a href="javascript:void(0)"
+                                            class="menu-mobile__link">Лизинг</a></li>
+                                    <li class="menu-mobile__item"><a href="javascript:void(0)"
+                                            class="menu-mobile__link">Сервисный
+                                            центр</a></li>
+                                    <li class="menu-mobile__item"><a href="javascript:void(0)"
+                                            class="menu-mobile__link">О корпорации</a>
+                                    </li>
+                                    <li class="menu-mobile__item"><a href="javascript:void(0)"
+                                            class="menu-mobile__link">Контакты</a></li>
+                                    <ul class="mobile-menu__contacts d-md-block d-lg-none mobile-menu-contacts">
+                                        <li class="mobile-menu-contacts__item"><a href="javascript:void(0)"
+                                                class="menu-mobile__link">8 800
+                                                000 00 - 00</a></li>
+                                        <li class="mobile-menu-contacts__item"><a href="javascript:void(0)"
+                                                class="menu-mobile__link btn-general" data-bs-toggle="modal"
+                                                data-bs-target="#callModal">Заказать звонок</a></li>
+                                    </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="header-bottom__phone d-flex align-items-center  center d-none d-md-flex">
+                        <span class="d-none d-md-block"> <a href="tel:8 800 000 00 - 00 ">8 800 000 00 - 00 </a></span>
+                        <a href="javascript:void(0)" class="shop-btn" data-bs-toggle="modal"
+                            data-bs-target="#callModal">Заказать
+                            звонок</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Хлебные крошки-->
+        <div class="breadcrumb-catalog">
+            <div class="container breadcrumb__container">
+                <div class="breadcrumb__items d-flex align-items-center">
+                    <span class="breadcrumb__item"> <a href="javascript:void(0);">Главная </a></span>
+                    <span class="breadcrumb__item"> <a href="javascript:void(0);">Каталог </a></span>
+                    <span class="breadcrumb__item breadcrumb__item_active"><a href="javascript:void(0);">Самосвалы
+                        </a></span>
+                </div>
+            </div>
+        </div>
+        <!-- Заголовок страницы-->
+
+        <section class="section-detail-card">
+            <div class="container section-detail-card__container">
+                <h1 class=" d-block d-xxl-none">Самосвал HOWO T5G  6x4 19.3 куба</h1>
+                <div class="row section-detail-card__row">
+                    <div class="col-xxl-6 section-detail-card__col__sliders order-2 order-sm-1">
+                        <div class="detail-card__wrap-images detail-card-wrap-images">
+                            <div class=" detail-card-wrap-images__slider">
+                                <div class="detail-card-wrap-images__inner ">
+                                    <div class="detail-card-wrap-images__thumbs d-none d-sm-flex">
+                                        <div>
+                                            <img src="/images/detail/1.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/2.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="/images/detail/3.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="/images/detail/4.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/5.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/6.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/7.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="/images/detail/8.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="/images/detail/8.png" alt="">
+                                        </div>
+                                      
+                                    </div>
+
+                                    <div class="detail-card-wrap-images__full-image full-image">
+                                        <div>
+                                            <img src="/images/cars/track1.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/cars/track1.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/3.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/4.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/5.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/6.png" alt="">
+                                        </div>
+
+                                        <div>
+                                            <img src="/images/detail/7.png" alt="">
+                                        </div>
+                                       
+                                        <div>
+                                            <img src="/images/detail/8.png" alt="">
+                                        </div>
+                                        <div>
+                                            <img src="/images/detail/8.png" alt="">
+                                        </div>
+                                       
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-6 section-detail-card__col-description section-detail-card-col-description order-1 order-sm-2">
+                            <div class=" section-detail-card-col-description__inner">
+                            <h1 class=" d-none d-xxl-block">Самосвал HOWO T5G  6x4 19.3 куба</h1>
+                            <div class="section-detail-card-col-description__characteristic">
+                                <div class="section-detail-card-col-description__wrap-price">
+                                <span class="section-detail-card-col-description__price">От 1 000 000 ₽</span>
+                                <h2 class="d-block d-xxl-none ">Характеристика</h2>
+                                </div>
+                                <ul class="section-detail-card-col-description__list section-detail-card-col-list">
+                                    <li class="section-detail-card-col-list__item"><span>Бренд</span>  <span>SINOTRUK</span></li>
+                                    <li class="section-detail-card-col-list__item"><span>Колесная формулы</span><span>6х4</span></li>
+                                    <li class="section-detail-card-col-list__item"><span>Объем кузова</span> <span>Объем кузова</span></li>
+                                    <li class="section-detail-card-col-list__item"><span>Модель двигателя</span><span>Yuchai YC6J125Z-T21</span></li>
+                                    <li class="section-detail-card-col-list__item"><span>Мощность двигателя </span> <span>92кВт (125 л.с)</span></li>
+                                    <li class="section-detail-card-col-list__item"><span>Грузоподъемность</span><span>32 000</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="section-detail-card-col-description__buttons d-none d-sm-flex section-detail-card-col-description-buttons"> 
+                           
+                                <a   data-bs-toggle="modal" data-bs-target="#callModal" href="javascript:void(0)" class="btn-general"> Заказать звонок</a>
+                                <a  data-bs-toggle="modal"  data-bs-target="#callModalOrder" href="javascript:void(0)" class="btn-general btn-general_white"> В лизинг</a>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+           <div class="section-detail-card__tabs-block__wrapper">
+            <div class="section-detail-card__tabs-block__container container">
+                <div class="d-flex section-detail-card__tabs-block section-detail-card-tabs-block">
+                    <div class="section-detail-card-tabs-block__tabs-col ">
+                        <ul class="section-detail-card-tabs-block__list " role="tablist">
+                            <li class="d-inline-flex align-items-center justify-content-between "><a href="javascript:void(0)" class="active" id="nav-characteristic-tab " data-bs-toggle="tab" data-bs-target="#characteristic">Характеристика</a> 
+                                <svg class="tab-list__arrow d-inline-flex align-items-center d-sm-none" width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 5.5L0 0.5H8L4 5.5Z" fill="#EB5F35"></path>
+                                </svg></li>
+                            <li><a href="javascript:void(0)" id="nav-delivery-tab" data-bs-toggle="tab" data-bs-target="#delivery">Доставка</a></li>
+                            <li><a href="javascript:void(0)" id="nav-lizing-tab" data-bs-toggle="tab" data-bs-target="#lizing">Лизинг</a></li>
+                            <li><a href="javascript:void(0)" id="nav-buy-tab" data-bs-toggle="tab" data-bs-target="#buy">Покупка напрямую</a></li>
+                        </ul>
+                    </div>
+                    <!-- Tab  Характеристики-->
+                    <div class="section-detail-card-tabs-block__tabs-сontent tab-content">
+                        <div class="tab-pane fade show active" id="characteristic" role="tabpanel" >
+                            <ul class="section-detail-card-col-description__list section-detail-card-tabs-block__characteristic  section-detail-card-col-list">
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Бренд</span> </div> <div class="section-detail-card-col-description__value"> <span>SINOTRUK</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Модель двигателя</span> </div> <div class="section-detail-card-col-description__value"> <span>MC11 (лицензионный двигатель MAN), 400 л.с. (евро 5), топливная система BOSCH</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>КПП, тип</span> </div> <div class="section-detail-card-col-description__value"> <span>Синхронизированная, 12-ти ступенчатая</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Балка</span> </div> <div class="section-detail-card-col-description__value"> <span>MAN VGD95 - 9,5 тонн</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Мосты</span> </div> <div class="section-detail-card-col-description__value"> <span>MAN MCP16 - 16 тонн x 2</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Максимальная скорость, км/ч</span> </div> <div class="section-detail-card-col-description__value"> <span>85-105</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Объем кузова, куб.м.</span> </div> <div class="section-detail-card-col-description__value"> <span>19,3</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Кабина</span> </div> <div class="section-detail-card-col-description__value"> <span>T5G (лицензионная кабина MAN TGA). Стандартная цельностальная кабина (высокая),
+                                    трёхскоростные  стеклоочистители, 2-х местная, спальное место</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Тормозная система</span> </div> <div class="section-detail-card-col-description__value"> <span>Пневматическая, двухконтурная. WABCO (Германия), ABS, ESC+EBS</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Колесная формула</span> </div> <div class="section-detail-card-col-description__value"> <span>6х4</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Гидроподъемник</span> </div> <div class="section-detail-card-col-description__value"> <span>Опционально-лицензионный / HYVA (переднее расположение)</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Комфорт</span> </div> <div class="section-detail-card-col-description__value"> <span>Климат-контроль, круиз-контроль, эл. Стеклоподъёмники, бортовой компьютер,
+                                    мультимедийная система, эл. стеклоподъёмники, электропривод зеркал, подогрев
+                                    зеркал, эл. подъёмник кабины, экран с 4 камерами наблюдения</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Грузоподъемность, кг</span> </div> <div class="section-detail-card-col-description__value"> <span>32 000</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Шины</span> </div> <div class="section-detail-card-col-description__value"> <span>12R20 либо 315/80R22,5</span></div></li>
+                                <li class="section-detail-card-col-list__item"> <div class="section-detail-card-col-description__title"><span>Объем топливного бака, л</span> </div> <div class="section-detail-card-col-description__value"> <span>600 (алюминиевый)</span></div></li>
+
+                            </ul>    
+                        </div>
+
+                        <div class="tab-pane " id="delivery" role="tabpanel" >
+                            <div class="section-detail-card__tab-content-inner">
+                            <p>Доставка</p>
+                             
+                           </div>
+                         </div>
+
+                         <div class="tab-pane " id="lizing" role="tabpanel" >
+                            <div class="section-detail-card__tab-content-inner">
+                            <p>Лизинг</p>
+                           </div>
+                         </div>
+
+                         <div class="tab-pane " id="buy" role="tabpanel" >
+                            <div class="section-detail-card__tab-content-inner">
+                            <p>Покупка</p>
+                           </div>
+                         </div>
+                    </div>
+
+                    <!-- Конец таба Характеристики--> 
+                </div>
+   
+            </div>
+            <!--Как работаем-->
+            <div class="section-detail-card__delivery section-detail-card-delivery">
+                <div class="section-detail-card__delivery-inner">
+                    <div class="container section-detail-card__container">
+                    <a href="javascript:void(0)" class="d-flex linkCategory">Доставка</a>
+                    <h1>Как мы работаем</h1>
+                    </div>
+                </div>
+                <div class="section-detail-card-delivery__feature section-detail-card-delivery-feature">
+                    <div class="container section-detail-card-delivery-feature__container">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-lg-6 col-xxl-4 section-detail-card-delivery-feature__col">
+                            <div class="section-detail-card-delivery__feature-inner">
+                            <span class="advantage-item__title orange-title">01 /<span class="subtitle-page advantage-item__title-inner">Оставить заявку</span> </span>
+                            <p>Оставьте заявку на сайте,в форме заявки укажите тип техники</p>
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-6  col-xxl-4 section-detail-card-delivery-feature__col">
+                            <div class="section-detail-card-delivery__feature-inner">
+                            <span class="advantage-item__title orange-title">02 /<span class="subtitle-page advantage-item__title-inner">Согласуйте условия  и подпишите договор</span> </span>
+                            <p>Договор на оказание услуг мы подготовим  сами и отправим его Вам в течение часа</p>
+                          </div>
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-lg-6 col-xxl-4 section-detail-card-delivery-feature__col">
+                            <div class="section-detail-card-delivery__feature-inner">
+                            <span class="advantage-item__title orange-title">03 /<span class="subtitle-page advantage-item__title-inner">Получите свою спецтехнику
+                            </span> </span>
+                            <p>Получите выбранное имущество.Наши опытные водители пригонят технику на ваш объект</p>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Конец как работаем-->
+
+        <!-- Другая техника -->
+         <div class="section-detail-card-another-cars">
+            <div class="container section-detail-card-another-cars__container">
+                <div class="section-detail-card-another-cars__title d-flex align-items-center justify-content-between">
+                <h1>Другая техника</h1> 
+                <div class="section-catalog-category__arrows section-catalog-category-arrows d-none d-sm-flex">
+                    <div class="section-catalog-category-arrows__counts section-catalog-counts d-flex justify-content-center align-items-center">
+                        <span class="section-catalog-counts__current">01</span> <span class="section-catalog-counts__all">03</span>
+                    </div>
+                    <div class="section-catalog-category-arrows__left">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.5927 6.5C14.1449 6.5 14.5927 6.94772 14.5927 7.5C14.5927 8.05228 14.1449 8.5 13.5927 8.5V6.5ZM0.70036 8.20711C0.309835 7.81658 0.309835 7.18342 0.70036 6.79289L7.06432 0.428932C7.45485 0.0384078 8.08801 0.0384078 8.47853 0.428932C8.86906 0.819457 8.86906 1.45262 8.47853 1.84315L2.82168 7.5L8.47853 13.1569C8.86906 13.5474 8.86906 14.1805 8.47853 14.5711C8.08801 14.9616 7.45485 14.9616 7.06432 14.5711L0.70036 8.20711ZM13.5927 8.5L1.40747 8.5V6.5L13.5927 6.5V8.5Z" fill="#292929"></path>
+                        </svg>
+                    </div>
+                    <div class="section-catalog-category-arrows__right">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.40735 6.5C0.855064 6.5 0.407349 6.94772 0.407349 7.5C0.407349 8.05228 0.855064 8.5 1.40735 8.5L1.40735 6.5ZM14.2996 8.20711C14.6902 7.81658 14.6902 7.18342 14.2996 6.79289L7.93568 0.428932C7.54515 0.0384078 6.91199 0.0384078 6.52147 0.428932C6.13094 0.819457 6.13094 1.45262 6.52147 1.84315L12.1783 7.5L6.52147 13.1569C6.13094 13.5474 6.13094 14.1805 6.52147 14.5711C6.91199 14.9616 7.54515 14.9616 7.93568 14.5711L14.2996 8.20711ZM1.40735 8.5L13.5925 8.5V6.5L1.40735 6.5L1.40735 8.5Z" fill="#292929"></path>
+                            </svg>
+                            
+                    </div>
+                </div>
+              </div>
+                <div class="section-detail-card-another-cars__slider">
+                    <!-- Карточка-->
+                    <div class="section-calaog-body__item-card item-card">
+                        <div class="item-card__wrap">
+                            <div class="row">
+                                <div class=" col-12  item-card__wrap-image ">
+                                    <div class="d-flex flex-column justify-content-between wrap-col-image">
+                                        <div class="item-card__inner-wrap-image">
+                                            <img src="./images/catalog/car4.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-12 item-card__col-desc">
+                                    <!--Цена -->
+                                  
+                                    <span class="item-card__title d-xxl-block">FAW J6 8x4</span>
+                                    <ul class="item-card__characteristics  card-characteristics">
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Грузоподъемность</span> <span> 3, т</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Модель двигателя</span> <span>Yuchai YC6J125Z-T21</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Мощность двигателя</span> <span>92кВт (125 л.с)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="item-card__buttons d-flex align-items-center">
+                                        <a class="btn-card_more btn-card" href="javascript:void(0)">Подробнее</a>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Конец карточки-->
+
+                     <!-- Карточка-->
+                     <div class="section-calaog-body__item-card item-card">
+                        <div class="item-card__wrap">
+                            <div class="row">
+                                <div class=" col-12  item-card__wrap-image ">
+                                    <div class="d-flex flex-column justify-content-between wrap-col-image">
+                                        <div class="item-card__inner-wrap-image">
+                                            <img src="./images/catalog/car6.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-12 item-card__col-desc">
+                                    <!--Цена -->
+                                  
+                                    <span class="item-card__title d-xxl-block">Фронтальный погрузчик XGMA XG931H</span>
+                                    <ul class="item-card__characteristics  card-characteristics">
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Грузоподъемность</span> <span> 3, т</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Модель двигателя</span> <span>Yuchai YC6J125Z-T21</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Мощность двигателя</span> <span>92кВт (125 л.с)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="item-card__buttons d-flex align-items-center">
+                                        <a class="btn-card_more btn-card" href="javascript:void(0)">Подробнее</a>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Конец карточки-->
+
+                     <!-- Карточка-->
+                     <div class="section-calaog-body__item-card item-card">
+                        <div class="item-card__wrap">
+                            <div class="row">
+                                <div class=" col-12  item-card__wrap-image ">
+                                    <div class="d-flex flex-column justify-content-between wrap-col-image">
+                                        <div class="item-card__inner-wrap-image">
+                                            <img src="./images/category/avtosm2.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-12 item-card__col-desc">
+                                    <!--Цена -->
+                                  
+                                    <span class="item-card__title d-xxl-block">Самосвал HW76 8x4 26,2 куба </span>
+                                    <ul class="item-card__characteristics  card-characteristics">
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Грузоподъемность</span> <span> 3, т</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Модель двигателя</span> <span>Yuchai YC6J125Z-T21</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Мощность двигателя</span> <span>92кВт (125 л.с)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="item-card__buttons d-flex align-items-center">
+                                        <a class="btn-card_more btn-card" href="javascript:void(0)">Подробнее</a>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Конец карточки-->
+
+                     <!-- Карточка-->
+                     <div class="section-calaog-body__item-card item-card">
+                        <div class="item-card__wrap">
+                            <div class="row">
+                                <div class=" col-12  item-card__wrap-image ">
+                                    <div class="d-flex flex-column justify-content-between wrap-col-image">
+                                        <div class="item-card__inner-wrap-image">
+                                            <img src="./images/catalog/car1.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" col-12 item-card__col-desc">
+                                    <!--Цена -->
+                                  
+                                    <span class="item-card__title d-xxl-block">Автобетоносмесители HOWO HW76 6x4 7 кубов </span>
+                                    <ul class="item-card__characteristics  card-characteristics">
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Грузоподъемность</span> <span> 3, т</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Модель двигателя</span> <span>Yuchai YC6J125Z-T21</span>
+                                        </li>
+                                        <li
+                                            class="card-characteristics__item d-flex justify-content-between align-items-center">
+                                            <span> Мощность двигателя</span> <span>92кВт (125 л.с)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="item-card__buttons d-flex align-items-center">
+                                        <a class="btn-card_more btn-card" href="javascript:void(0)">Подробнее</a>
+                                          
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Конец карточки-->
+
+                  
+            </div>
+         </div>
+            
+        </div>
+
+          
+        </section>
+
+
+
+      
+
+        <!-- Форма-->
+        <section class="section-form">
+            <div class="container    around-border  ">
+                <div class="section-form-inner ">
+                    <h1>Свяжитесь с нами</h1>
+                    <p class="section-form-inner__description">Если у вас есть вопросы по приобретению нашей продукции,
+                        напишите и
+                        мы ответим в ближайшее время.</p>
+                    <div class="section-form__inner-wrap">
+                        <form class="section-form__main-form justify-content-between row ">
+                            <div class=" col-sm-12 col-md-12 col-lg-6 col-xxl-3">
+                                <div class="section-from__wrap-input">
+                                    <input class="flex-grow-1" type="text" name="name" placeholder="Ваше имя">
+                                </div>
+                            </div>
+
+                            <div class=" col-sm-12 col-md-12 col-lg-6 col-xxl-3">
+                                <div class="section-from__wrap-input">
+                                    <input class="flex-grow-1" type="text" name="phone"
+                                        placeholder="+ 7 (900) 000 00-00">
+                                </div>
+                            </div>
+
+                            <div class=" col-sm-12 col-md-12 col-lg-12 col-xxl-3 ">
+                                <div class="section-from__wrap-textarea">
+                                    <textarea class="flex-grow-1" type="text" name="message"
+                                        placeholder="Сообщение"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-12 col-xxl-3">
+                                <div class="section-from__wrap-input section-form__wrap-inputBtn">
+                                    <button class="btn-general input-submit-btn flex-grow-1"
+                                        value="Отправить">Отправить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- футер-->
+        <footer class="footer container-fluid">
+            <div class="container  ">
+                <div class="row footer__row">
+                    <!-- -logo-->
+                    <div class="footer-logo-col col-sm-6 col-lg-3 col-xxl-3 footer__col">
+                        <div class="footer-logo-col__inner d-inline-flex flex-column ">
+                            <div class="footer-logo-col__wrap d-flex justify-content-start align-items-center">
+                                <img src="./images/logo-part1.png">
+                                <span class="text-footer-logo"> Аsand avto</span>
+                            </div>
+                            <div class="footer__dev">
+                                <a href="javascript:void(0)">© HI-TECH MEDIA </a>
+                                <a href="javascript:void(0)">Политика конфиденциальности</a>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Delevery-->
+                    <div class="footer-delivery-col col-sm-6  col-lg-3 col-xxl-3  footer__col">
+                        <div class="footer-logo-col__inner">
+                            <span class="footer__category">Поставки</span>
+                            <ul class="delivery-list">
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Автобетоносмесители </a></li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Самосвалы</a>
+                                </li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Тягачи</a></li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Фронтальные
+                                        погрузчики</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Information-->
+                    <div class="footer-delivery-col col-sm-6  col-lg-3 col-xxl-3  footer__col">
+                        <div class="footer-logo-col__inner">
+                            <span class="footer__category">Информация</span>
+                            <ul class="delivery-list">
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">О
+                                        нас </a></li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Лизинг</a></li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Сервисный
+                                        центр</a></li>
+                                <li class="delivery-list__item"><a href="javascript:void(0)"
+                                        class="delivery-list__link">Контакты</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contacts-->
+                    <div class="footer-contacts-col col-lg-3 col-sm-6  col-xxl-3  footer__col">
+                        <div class="footer-contacts-col__inner">
+                            <ul class="delivery-list">
+                                <li class="footer-contacts__item"><a href="tel:+8 (903) 359 35-95"
+                                        class="delivery-list__link">+8 (903)
+                                        359 35-95 </a></li>
+                                <li class="footer-contacts__item"><a href="mailto:asand-avto@yandex.ru"
+                                        class="delivery-list__link">asand-avto@yandex.ru</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
